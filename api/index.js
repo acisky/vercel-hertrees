@@ -20,9 +20,34 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(cookieParser());
 
-app.get('/', (req, res) => {
-  res.render('index',{topGames: games,newGames:games});
+const topGamesArr = ["merge-fellas", "merge-heroes", "merge-legend"];
+
+async function getGameList() {
+  const list = await Promise.all(
+    games.map(async (filename) => {
+      const filePath = path.join(gamesPath, filename);
+      const fileContent = await fs.readFile(filePath, "utf-8");
+      const { __content, ...metadata } = yamlFront.loadFront(fileContent);
+      return { ...metadata, slug: path.parse(filename).name };
+    }),
+  );
+  return list.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+}
+
+app.get("/", async (req, res) => {
+  const gameList = await getGameList();
+
+  const topGames = gameList.filter((game) => topGamesArr.includes(game.slug));
+  const newGames = gameList.filter((game) => !topGamesArr.includes(game.slug));
+  res.render("index", { topGames, newGames });
 });
+
+function extractDescription(htmlContent) {
+  // 删除所有HTML标签
+  const plainText = htmlContent.replace(/<[^>]+>/g, "");
+  // 截取前160个字符
+  return plainText.substring(0, 160);
+}
 
 games.forEach((filename) => {
   app.get(`/${path.parse(filename).name}`, async (req, res) => {
@@ -30,21 +55,37 @@ games.forEach((filename) => {
       const filePath = path.join(gamesPath, filename);
       const fileContent = await fs.readFile(filePath, "utf-8");
       const { __content, ...metadata } = yamlFront.loadFront(fileContent);
+      metadata.slug = path.parse(filename).name;
       const htmlContent = marked.parse(__content);
 
-      const gameList = await Promise.all(
-        games.map(async (filename) => {
-          const filePath = path.join(gamesPath, filename);
-          const fileContent = await fs.readFile(filePath, "utf-8");
-          const { __content, ...metadata } = yamlFront.loadFront(fileContent);
-          return metadata;
-        })
-      ).then(list => list.sort((a, b) => b.top || 0 - a.top || 0));;
+      const gameList = await getGameList();
+
+      const topGames = gameList.filter((game) => topGamesArr.includes(game.slug));
+      const newGames = gameList.filter((game) => !topGamesArr.includes(game.slug));
 
       res.render("game", {
         metadata,
         content: htmlContent,
-        gameList
+        description: extractDescription(htmlContent),
+        gameList,
+        topGames,
+        newGames,
+      });
+    } catch (error) {
+      console.error(`Error processing ${filename}:`, error);
+      res.status(500).send("Internal Server Error");
+    }
+  });
+
+  app.get(`/${path.parse(filename).name}.embed`, async (req, res) => {
+    try {
+      const filePath = path.join(gamesPath, filename);
+      const fileContent = await fs.readFile(filePath, "utf-8");
+      const { __content, ...metadata } = yamlFront.loadFront(fileContent);
+      metadata.slug = path.parse(filename).name;
+
+      res.render("embed", {
+        metadata,
       });
     } catch (error) {
       console.error(`Error processing ${filename}:`, error);
@@ -53,29 +94,58 @@ games.forEach((filename) => {
   });
 });
 
-app.get("/sitemap.xml", async (req, res) => {
+app.get("/new-games", async (req, res) => {
+  const gameList = await getGameList();
+  const topGames = gameList.filter((game) => topGamesArr.includes(game.slug));
+  const newGames = gameList.filter((game) => !topGamesArr.includes(game.slug));
+  res.render("newgames", { topGames, newGames });
+});
+
+app.get("/aboutus", (req, res) => {
+  res.render("aboutus");
+});
+
+app.get("/contactus", (req, res) => {
+  res.render("contactus");
+});
+
+app.get("/dmca", (req, res) => {
+  res.render("dmca");
+});
+
+app.get("/privacypolicy", (req, res) => {
+  res.render("privacypolicy");
+});
+
+app.get("/termsofservices", (req, res) => {
+  res.render("termsofservices");
+});
+
+app.get("/game-sitemap.xml", async (req, res) => {
   try {
     const baseUrl = process.env.BASE_URL || `http://localhost:${port}`;
-    const gameUrls = await Promise.all(games.map(async filename => {
-      const filePath = path.join(gamesPath, filename);
-      const stats = await fs.stat(filePath);
-      return {
-        url: `${baseUrl}/${path.parse(filename).name}`,
-        lastmod: stats.mtime.toISOString().split('T')[0],
-        priority: 0.8
-      };
-    }));
+    const gameUrls = await Promise.all(
+      games.map(async (filename) => {
+        const filePath = path.join(gamesPath, filename);
+        const stats = await fs.stat(filePath);
+        return {
+          url: `${baseUrl}/${path.parse(filename).name}`,
+          lastmod: stats.mtime.toISOString().split("T")[0],
+          priority: 0.8,
+        };
+      }),
+    );
 
     const staticUrls = [
-      { url: baseUrl, lastmod: new Date().toISOString().split('T')[0], priority: 1.0 },
-      { url: `${baseUrl}/new-games`, lastmod: new Date().toISOString().split('T')[0], priority: 0.9 },
-      { url: `${baseUrl}/sprunki-all-phases`, lastmod: new Date().toISOString().split('T')[0], priority: 0.9 }
+      { url: baseUrl, lastmod: new Date().toISOString().split("T")[0], priority: 1.0 },
+      { url: `${baseUrl}/new-games`, lastmod: new Date().toISOString().split("T")[0], priority: 0.9 },
+      { url: `${baseUrl}/sprunki-all-phases`, lastmod: new Date().toISOString().split("T")[0], priority: 0.9 },
     ];
 
     const allUrls = [...staticUrls, ...gameUrls];
 
-    res.header('Content-Type', 'application/xml');
-    res.render('sitemap', { urls: allUrls });
+    res.header("Content-Type", "application/xml");
+    res.render("sitemap", { urls: allUrls });
   } catch (error) {
     console.error("Error generating sitemap:", error);
     res.status(500).send("Internal Server Error");
@@ -83,7 +153,6 @@ app.get("/sitemap.xml", async (req, res) => {
 });
 
 const port = process.env.PORT || 3000;
-
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
