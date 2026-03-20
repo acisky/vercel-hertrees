@@ -1,696 +1,71 @@
 @font-face {
-    font-family: 'Poppins';
+    font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
-    src: local('Poppins Regular'), url('./../fonts/Poppins-Regular.woff') format('woff');
+    src: local('Lato Regular'), url('./../fonts/Lato-Regular.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Poppins';
+    font-family: 'Lato';
     font-style: italic;
     font-weight: 400;
-    src: local('Poppins Italic'), url('./../fonts/Poppins-Italic.woff') format('woff');
+    src: local('Lato Italic'), url('./../fonts/Lato-Italic.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Poppins';
+    font-family: 'Lato';
     font-style: normal;
     font-weight: 100;
-    src: local('Poppins Thin'), url('./../fonts/Poppins-Thin.woff') format('woff');
+    src: local('Lato Hairline'), url('./../fonts/Lato-Hairline.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Poppins';
+    font-family: 'Lato';
     font-style: italic;
     font-weight: 100;
-    src: local('Poppins Thin Italic'), url('./../fonts/Poppins-ThinItalic.woff') format('woff');
+    src: local('Lato Hairline Italic'), url('./../fonts/Lato-HairlineItalic.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 200;
-    src: local('Poppins ExtraLight'), url('./../fonts/Poppins-ExtraLight.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Poppins';
-    font-style: italic;
-    font-weight: 200;
-    src: local('Poppins ExtraLight Italic'), url('./../fonts/Poppins-ExtraLightItalic.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Poppins';
+    font-family: 'Lato';
     font-style: normal;
     font-weight: 300;
-    src: local('Poppins Light'), url('./../fonts/Poppins-Light.woff') format('woff');
+    src: local('Lato Light'), url('./../fonts/Lato-Light.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Poppins';
+    font-family: 'Lato';
     font-style: italic;
     font-weight: 300;
-    src: local('Poppins Light Italic'), url('./../fonts/Poppins-LightItalic.woff') format('woff');
+    src: local('Lato Light Italic'), url('./../fonts/Lato-LightItalic.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 500;
-    src: local('Poppins Medium'), url('./../fonts/Poppins-Medium.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Poppins';
-    font-style: italic;
-    font-weight: 500;
-    src: local('Poppins Medium Italic'), url('./../fonts/Poppins-MediumItalic.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    src: local('Poppins SemiBold'), url('./../fonts/Poppins-SemiBold.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Poppins';
-    font-style: italic;
-    font-weight: 600;
-    src: local('Poppins SemiBold Italic'), url('./../fonts/Poppins-SemiBoldItalic.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Poppins';
+    font-family: 'Lato';
     font-style: normal;
     font-weight: 700;
-    src: local('Poppins Bold'), url('./../fonts/Poppins-Bold.woff') format('woff');
+    src: local('Lato Bold'), url('./../fonts/Lato-Bold.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Poppins';
+    font-family: 'Lato';
     font-style: italic;
     font-weight: 700;
-    src: local('Poppins Bold Italic'), url('./../fonts/Poppins-BoldItalic.woff') format('woff');
+    src: local('Lato Bold Italic'), url('./../fonts/Lato-BoldItalic.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 800;
-    src: local('Poppins ExtraBold'), url('./../fonts/Poppins-ExtraBold.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Poppins';
-    font-style: italic;
-    font-weight: 800;
-    src: local('Poppins ExtraBold Italic'), url('./../fonts/Poppins-ExtraBoldItalic.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Poppins';
+    font-family: 'Lato';
     font-style: normal;
     font-weight: 900;
-    src: local('Poppins Black'), url('./../fonts/Poppins-Black.woff') format('woff');
+    src: local('Lato Black'), url('./../fonts/Lato-Black.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Poppins';
+    font-family: 'Lato';
     font-style: italic;
     font-weight: 900;
-    src: local('Poppins Black Italic'), url('./../fonts/Poppins-BlackItalic.woff') format('woff');
-}
-
-.grid {
-    display: grid;
-    grid-template-rows: repeat(var(--bs-rows, 1), 1fr);
-    grid-template-columns: repeat(var(--bs-columns, 12), 1fr);
-    gap: var(--bs-gap, 1.5rem)
-}
-
-.grid .g-col-1 {
-    grid-column: auto/span 1
-}
-
-.grid .g-col-2 {
-    grid-column: auto/span 2
-}
-
-.grid .g-col-3 {
-    grid-column: auto/span 3
-}
-
-.grid .g-col-4 {
-    grid-column: auto/span 4
-}
-
-.grid .g-col-5 {
-    grid-column: auto/span 5
-}
-
-.grid .g-col-6 {
-    grid-column: auto/span 6
-}
-
-.grid .g-col-7 {
-    grid-column: auto/span 7
-}
-
-.grid .g-col-8 {
-    grid-column: auto/span 8
-}
-
-.grid .g-col-9 {
-    grid-column: auto/span 9
-}
-
-.grid .g-col-10 {
-    grid-column: auto/span 10
-}
-
-.grid .g-col-11 {
-    grid-column: auto/span 11
-}
-
-.grid .g-col-12 {
-    grid-column: auto/span 12
-}
-
-.grid .g-start-1 {
-    grid-column-start: 1
-}
-
-.grid .g-start-2 {
-    grid-column-start: 2
-}
-
-.grid .g-start-3 {
-    grid-column-start: 3
-}
-
-.grid .g-start-4 {
-    grid-column-start: 4
-}
-
-.grid .g-start-5 {
-    grid-column-start: 5
-}
-
-.grid .g-start-6 {
-    grid-column-start: 6
-}
-
-.grid .g-start-7 {
-    grid-column-start: 7
-}
-
-.grid .g-start-8 {
-    grid-column-start: 8
-}
-
-.grid .g-start-9 {
-    grid-column-start: 9
-}
-
-.grid .g-start-10 {
-    grid-column-start: 10
-}
-
-.grid .g-start-11 {
-    grid-column-start: 11
-}
-
-@media (min-width: 576px) {
-    .grid .g-col-sm-1 {
-        grid-column: auto/span 1
-    }
-
-    .grid .g-col-sm-2 {
-        grid-column: auto/span 2
-    }
-
-    .grid .g-col-sm-3 {
-        grid-column: auto/span 3
-    }
-
-    .grid .g-col-sm-4 {
-        grid-column: auto/span 4
-    }
-
-    .grid .g-col-sm-5 {
-        grid-column: auto/span 5
-    }
-
-    .grid .g-col-sm-6 {
-        grid-column: auto/span 6
-    }
-
-    .grid .g-col-sm-7 {
-        grid-column: auto/span 7
-    }
-
-    .grid .g-col-sm-8 {
-        grid-column: auto/span 8
-    }
-
-    .grid .g-col-sm-9 {
-        grid-column: auto/span 9
-    }
-
-    .grid .g-col-sm-10 {
-        grid-column: auto/span 10
-    }
-
-    .grid .g-col-sm-11 {
-        grid-column: auto/span 11
-    }
-
-    .grid .g-col-sm-12 {
-        grid-column: auto/span 12
-    }
-
-    .grid .g-start-sm-1 {
-        grid-column-start: 1
-    }
-
-    .grid .g-start-sm-2 {
-        grid-column-start: 2
-    }
-
-    .grid .g-start-sm-3 {
-        grid-column-start: 3
-    }
-
-    .grid .g-start-sm-4 {
-        grid-column-start: 4
-    }
-
-    .grid .g-start-sm-5 {
-        grid-column-start: 5
-    }
-
-    .grid .g-start-sm-6 {
-        grid-column-start: 6
-    }
-
-    .grid .g-start-sm-7 {
-        grid-column-start: 7
-    }
-
-    .grid .g-start-sm-8 {
-        grid-column-start: 8
-    }
-
-    .grid .g-start-sm-9 {
-        grid-column-start: 9
-    }
-
-    .grid .g-start-sm-10 {
-        grid-column-start: 10
-    }
-
-    .grid .g-start-sm-11 {
-        grid-column-start: 11
-    }
-}
-
-@media (min-width: 768px) {
-    .grid .g-col-md-1 {
-        grid-column: auto/span 1
-    }
-
-    .grid .g-col-md-2 {
-        grid-column: auto/span 2
-    }
-
-    .grid .g-col-md-3 {
-        grid-column: auto/span 3
-    }
-
-    .grid .g-col-md-4 {
-        grid-column: auto/span 4
-    }
-
-    .grid .g-col-md-5 {
-        grid-column: auto/span 5
-    }
-
-    .grid .g-col-md-6 {
-        grid-column: auto/span 6
-    }
-
-    .grid .g-col-md-7 {
-        grid-column: auto/span 7
-    }
-
-    .grid .g-col-md-8 {
-        grid-column: auto/span 8
-    }
-
-    .grid .g-col-md-9 {
-        grid-column: auto/span 9
-    }
-
-    .grid .g-col-md-10 {
-        grid-column: auto/span 10
-    }
-
-    .grid .g-col-md-11 {
-        grid-column: auto/span 11
-    }
-
-    .grid .g-col-md-12 {
-        grid-column: auto/span 12
-    }
-
-    .grid .g-start-md-1 {
-        grid-column-start: 1
-    }
-
-    .grid .g-start-md-2 {
-        grid-column-start: 2
-    }
-
-    .grid .g-start-md-3 {
-        grid-column-start: 3
-    }
-
-    .grid .g-start-md-4 {
-        grid-column-start: 4
-    }
-
-    .grid .g-start-md-5 {
-        grid-column-start: 5
-    }
-
-    .grid .g-start-md-6 {
-        grid-column-start: 6
-    }
-
-    .grid .g-start-md-7 {
-        grid-column-start: 7
-    }
-
-    .grid .g-start-md-8 {
-        grid-column-start: 8
-    }
-
-    .grid .g-start-md-9 {
-        grid-column-start: 9
-    }
-
-    .grid .g-start-md-10 {
-        grid-column-start: 10
-    }
-
-    .grid .g-start-md-11 {
-        grid-column-start: 11
-    }
-}
-
-@media (min-width: 992px) {
-    .grid .g-col-lg-1 {
-        grid-column: auto/span 1
-    }
-
-    .grid .g-col-lg-2 {
-        grid-column: auto/span 2
-    }
-
-    .grid .g-col-lg-3 {
-        grid-column: auto/span 3
-    }
-
-    .grid .g-col-lg-4 {
-        grid-column: auto/span 4
-    }
-
-    .grid .g-col-lg-5 {
-        grid-column: auto/span 5
-    }
-
-    .grid .g-col-lg-6 {
-        grid-column: auto/span 6
-    }
-
-    .grid .g-col-lg-7 {
-        grid-column: auto/span 7
-    }
-
-    .grid .g-col-lg-8 {
-        grid-column: auto/span 8
-    }
-
-    .grid .g-col-lg-9 {
-        grid-column: auto/span 9
-    }
-
-    .grid .g-col-lg-10 {
-        grid-column: auto/span 10
-    }
-
-    .grid .g-col-lg-11 {
-        grid-column: auto/span 11
-    }
-
-    .grid .g-col-lg-12 {
-        grid-column: auto/span 12
-    }
-
-    .grid .g-start-lg-1 {
-        grid-column-start: 1
-    }
-
-    .grid .g-start-lg-2 {
-        grid-column-start: 2
-    }
-
-    .grid .g-start-lg-3 {
-        grid-column-start: 3
-    }
-
-    .grid .g-start-lg-4 {
-        grid-column-start: 4
-    }
-
-    .grid .g-start-lg-5 {
-        grid-column-start: 5
-    }
-
-    .grid .g-start-lg-6 {
-        grid-column-start: 6
-    }
-
-    .grid .g-start-lg-7 {
-        grid-column-start: 7
-    }
-
-    .grid .g-start-lg-8 {
-        grid-column-start: 8
-    }
-
-    .grid .g-start-lg-9 {
-        grid-column-start: 9
-    }
-
-    .grid .g-start-lg-10 {
-        grid-column-start: 10
-    }
-
-    .grid .g-start-lg-11 {
-        grid-column-start: 11
-    }
-}
-
-@media (min-width: 1200px) {
-    .grid .g-col-xl-1 {
-        grid-column: auto/span 1
-    }
-
-    .grid .g-col-xl-2 {
-        grid-column: auto/span 2
-    }
-
-    .grid .g-col-xl-3 {
-        grid-column: auto/span 3
-    }
-
-    .grid .g-col-xl-4 {
-        grid-column: auto/span 4
-    }
-
-    .grid .g-col-xl-5 {
-        grid-column: auto/span 5
-    }
-
-    .grid .g-col-xl-6 {
-        grid-column: auto/span 6
-    }
-
-    .grid .g-col-xl-7 {
-        grid-column: auto/span 7
-    }
-
-    .grid .g-col-xl-8 {
-        grid-column: auto/span 8
-    }
-
-    .grid .g-col-xl-9 {
-        grid-column: auto/span 9
-    }
-
-    .grid .g-col-xl-10 {
-        grid-column: auto/span 10
-    }
-
-    .grid .g-col-xl-11 {
-        grid-column: auto/span 11
-    }
-
-    .grid .g-col-xl-12 {
-        grid-column: auto/span 12
-    }
-
-    .grid .g-start-xl-1 {
-        grid-column-start: 1
-    }
-
-    .grid .g-start-xl-2 {
-        grid-column-start: 2
-    }
-
-    .grid .g-start-xl-3 {
-        grid-column-start: 3
-    }
-
-    .grid .g-start-xl-4 {
-        grid-column-start: 4
-    }
-
-    .grid .g-start-xl-5 {
-        grid-column-start: 5
-    }
-
-    .grid .g-start-xl-6 {
-        grid-column-start: 6
-    }
-
-    .grid .g-start-xl-7 {
-        grid-column-start: 7
-    }
-
-    .grid .g-start-xl-8 {
-        grid-column-start: 8
-    }
-
-    .grid .g-start-xl-9 {
-        grid-column-start: 9
-    }
-
-    .grid .g-start-xl-10 {
-        grid-column-start: 10
-    }
-
-    .grid .g-start-xl-11 {
-        grid-column-start: 11
-    }
-}
-
-@media (min-width: 1400px) {
-    .grid .g-col-xxl-1 {
-        grid-column: auto/span 1
-    }
-
-    .grid .g-col-xxl-2 {
-        grid-column: auto/span 2
-    }
-
-    .grid .g-col-xxl-3 {
-        grid-column: auto/span 3
-    }
-
-    .grid .g-col-xxl-4 {
-        grid-column: auto/span 4
-    }
-
-    .grid .g-col-xxl-5 {
-        grid-column: auto/span 5
-    }
-
-    .grid .g-col-xxl-6 {
-        grid-column: auto/span 6
-    }
-
-    .grid .g-col-xxl-7 {
-        grid-column: auto/span 7
-    }
-
-    .grid .g-col-xxl-8 {
-        grid-column: auto/span 8
-    }
-
-    .grid .g-col-xxl-9 {
-        grid-column: auto/span 9
-    }
-
-    .grid .g-col-xxl-10 {
-        grid-column: auto/span 10
-    }
-
-    .grid .g-col-xxl-11 {
-        grid-column: auto/span 11
-    }
-
-    .grid .g-col-xxl-12 {
-        grid-column: auto/span 12
-    }
-
-    .grid .g-start-xxl-1 {
-        grid-column-start: 1
-    }
-
-    .grid .g-start-xxl-2 {
-        grid-column-start: 2
-    }
-
-    .grid .g-start-xxl-3 {
-        grid-column-start: 3
-    }
-
-    .grid .g-start-xxl-4 {
-        grid-column-start: 4
-    }
-
-    .grid .g-start-xxl-5 {
-        grid-column-start: 5
-    }
-
-    .grid .g-start-xxl-6 {
-        grid-column-start: 6
-    }
-
-    .grid .g-start-xxl-7 {
-        grid-column-start: 7
-    }
-
-    .grid .g-start-xxl-8 {
-        grid-column-start: 8
-    }
-
-    .grid .g-start-xxl-9 {
-        grid-column-start: 9
-    }
-
-    .grid .g-start-xxl-10 {
-        grid-column-start: 10
-    }
-
-    .grid .g-start-xxl-11 {
-        grid-column-start: 11
-    }
+    src: local('Lato Black Italic'), url('./../fonts/Lato-BlackItalic.woff') format('woff');
 }
 
 :root {
@@ -706,11 +81,13 @@
     --bg-300: #bfbfbf;
     --bs-body-font-size: .875rem;
     --bs-body-line-height: 1.75;
+    --bs-link-color-rgb: 146, 107, 106;
+    --bs-link-hover-color-rgb: 51, 51, 51;
 }
 
 body {
     background: var(--bg-100);
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Lato', sans-serif;
     color: #333333;
 }
 
@@ -738,25 +115,12 @@ body {
 }
 
 .header-logo {
-    width: 2rem;
-    height: 2rem;
+    height: 3rem;
 }
 
 .footer {
-    --bs-border-color: rgba(255, 255, 255, .2);
+    background: var(--bg-200);
     font-size: 0.875rem;
-}
-
-
-.game-hreo {
-    --bs-columns: 4;
-    --bs-gap: 1rem;
-}
-
-@media (max-width: 768px) {
-    .game-hreo {
-        --bs-columns: 1;
-    }
 }
 
 .game-main {
@@ -972,6 +336,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .game-cover .btn,
     .new-games .btn,
     .game-cover .btn svg,
@@ -984,92 +349,96 @@ body {
     }
 }
 
+.game-sidebar {
+    background: var(--bg-200);
+}
+
 .game-card-link {
     display: block;
     text-decoration: none;
     position: relative;
     overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+    background: var(--bg-100);
+}
+
+.game-card-image {
+    overflow: hidden;
 }
 
 .game-card-image img {
     width: 100%;
+    transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 .game-card-title {
     position: absolute;
     left: 0;
-    bottom: -100%;
+    bottom: 0;
     width: 100%;
     text-align: center;
     color: #ffffff;
     font-size: 0.875rem;
-    line-height: 1rem;
-    padding: 1rem 0.35rem 0.35rem;
+    line-height: 1.2rem;
+    padding: 2rem 0.5rem 0.75rem;
     font-weight: 700;
-    background: rgba(0, 0, 0, 0.5);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(0deg, rgba(44, 62, 80, 0.9) 0%, rgba(44, 62, 80, 0.6) 50%, rgba(44, 62, 80, 0) 100%);
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+    backdrop-filter: blur(2px);
 }
 
 .game-card-link:hover {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 6px 1px;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -10px rgba(44, 62, 80, 0.3);
+    z-index: 1;
+}
+
+.game-card-link:hover .game-card-image img {
+    transform: scale(1.1);
 }
 
 .game-card-link:hover .game-card-title {
-    bottom: 0;
-}
-
-.hero-games {
-    --bs-columns: 3;
-    --bs-gap: 1rem;
-}
-
-.game-list {
-    --bs-columns: 9;
-    --bs-gap: 1rem;
-}
-
-@media (max-width: 768px) {
-    .game-list {
-        --bs-columns: 3;
-    }
+    transform: translateY(0);
 }
 
 .game-post a {
-    color: #7dd3fc;
+    color: var(--accent-200);
     text-decoration: none;
-    border-bottom: 1px dotted rgba(125, 211, 252, 0.5);
+    border-bottom: 1px dotted rgba(146, 107, 106, 0.5);
     transition: all 0.2s ease;
     font-weight: 500;
 }
 
 .game-post a:hover {
-    color: #ffffff;
+    color: var(--primary-100);
     border-bottom-style: solid;
-    border-bottom-color: #ffffff;
+    border-bottom-color: var(--primary-100);
 }
 
 .game-post table {
     width: 100%;
     margin: 1.5rem 0;
-    color: #e0f2fe;
+    color: var(--text-100);
     border-collapse: collapse;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-100);
     border-radius: 0.5rem;
     overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .game-post table th,
 .game-post table td {
     padding: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--bg-300);
     text-align: left;
 }
 
 .game-post table th {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--bg-200);
     font-weight: 700;
-    color: #ffffff;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    color: var(--primary-100);
+    border-bottom: 2px solid var(--bg-300);
 }
 
 .game-post table tr:last-child td {
@@ -1077,7 +446,7 @@ body {
 }
 
 .game-post table tr:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--bg-200);
 }
 
 .game-post img {
@@ -1100,34 +469,35 @@ body {
 }
 
 .game-post li::marker {
-    color: #7dd3fc;
+    color: var(--accent-200);
 }
 
 .game-post blockquote {
-    border-left: 4px solid #38bdf8;
-    background: rgba(56, 189, 248, 0.1);
+    border-left: 4px solid var(--accent-200);
+    background: var(--bg-200);
     padding: 1rem 1.5rem;
     margin: 1.5rem 0;
     border-radius: 0 0.5rem 0.5rem 0;
     font-style: italic;
-    color: #bae6fd;
+    color: var(--text-200);
 }
 
 .game-post code {
-    background: rgba(0, 0, 0, 0.2);
+    background: var(--bg-300);
     padding: 0.2rem 0.4rem;
     border-radius: 0.25rem;
     font-family: monospace;
-    color: #e0f2fe;
+    color: var(--primary-100);
     font-size: 0.9em;
 }
 
 .game-post pre {
-    background: rgba(0, 0, 0, 0.2);
+    background: var(--primary-100);
     padding: 1rem;
     border-radius: 0.5rem;
     overflow-x: auto;
     margin-bottom: 1.5rem;
+    color: #ffffff;
 }
 
 .game-post pre code {
