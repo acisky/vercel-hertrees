@@ -20,7 +20,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(cookieParser());
 
-const topGamesArr = ["merge-fellas", "merge-heroes", "merge-legend"];
+const topGamesArr = ["her-trees-first-puzzle", "her-trees-the-puzzle-house"];
 
 async function getGameList() {
   const list = await Promise.all(
@@ -96,9 +96,7 @@ games.forEach((filename) => {
 
 app.get("/new-games", async (req, res) => {
   const gameList = await getGameList();
-  const topGames = gameList.filter((game) => topGamesArr.includes(game.slug));
-  const newGames = gameList.filter((game) => !topGamesArr.includes(game.slug));
-  res.render("newgames", { topGames, newGames });
+  res.render("newgames", { newGames: gameList });
 });
 
 app.get("/aboutus", (req, res) => {
