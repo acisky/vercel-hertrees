@@ -43,10 +43,12 @@ app.get("/", async (req, res) => {
 });
 
 function extractDescription(htmlContent) {
+  // 排除h2和h3标签及其内容
+  const cleanHtml = htmlContent.replace(/<h[23][^>]*>[\s\S]*?<\/h[23]>/gi, "");
   // 删除所有HTML标签
-  const plainText = htmlContent.replace(/<[^>]+>/g, "");
+  const plainText = cleanHtml.replace(/<[^>]+>/g, "");
   // 截取前160个字符
-  return plainText.substring(0, 160);
+  return plainText.substring(0, 160).trim();
 }
 
 games.forEach((filename) => {
