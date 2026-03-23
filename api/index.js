@@ -20,7 +20,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(cookieParser());
 
-const topGamesArr = ["her-trees-first-puzzle", "her-trees-the-puzzle-house"];
+const topGamesArr = ["her-trees-first-puzzle", "her-trees-the-puzzle-house", "creepy-dates", "penultima"];
 
 async function getGameList() {
   const list = await Promise.all(
@@ -37,7 +37,9 @@ async function getGameList() {
 app.get("/", async (req, res) => {
   const gameList = await getGameList();
 
-  const topGames = gameList.filter((game) => topGamesArr.includes(game.slug));
+  const topGames = topGamesArr
+    .map((slug) => gameList.find((game) => game.slug === slug))
+    .filter((game) => game !== undefined);
   const newGames = gameList.filter((game) => !topGamesArr.includes(game.slug));
   res.render("index", { topGames, newGames });
 });
@@ -62,7 +64,9 @@ games.forEach((filename) => {
 
       const gameList = await getGameList();
 
-      const topGames = gameList.filter((game) => topGamesArr.includes(game.slug));
+      const topGames = topGamesArr
+        .map((slug) => gameList.find((game) => game.slug === slug))
+        .filter((game) => game !== undefined);
       const newGames = gameList.filter((game) => !topGamesArr.includes(game.slug));
 
       res.render("game", {
