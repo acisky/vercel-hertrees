@@ -2,7 +2,7 @@
 title: 'HER TREES : First Puzzle'
 slug: her-trees-first-puzzle
 iframe: https://html-classic.itch.zone/html/16690123/HerTreesFirstPuzzleWebGL/index.html?v=1772615865
-thumb: /thumb/her-trees-first-puzzle.png
+thumb: /thumb/her-trees-first-puzzle.webp
 timestamp: 1772615865
 ---
 

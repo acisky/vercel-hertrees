@@ -2,7 +2,7 @@
 title: "HER TREES : The Puzzle House"
 slug: her-trees-the-puzzle-house
 iframe: https://html-classic.itch.zone/html/13807123/HerTrees2WebGL/index.html
-thumb: /thumb/her-trees-the-puzzle-house.png
+thumb: /thumb/her-trees-the-puzzle-house.webp
 timestamp: 1772615865
 ---
 
