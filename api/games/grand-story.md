@@ -6,8 +6,6 @@ thumb: /thumb/grand-story.png
 timestamp: 1774237553
 ---
 
-## Grand Story Overview
-
 Grand Story is now available as a story-driven indie role-playing game that invites players to control their grandmother on an epic adventure. This game offers extensive exploration opportunities within a handcrafted world, where you can unlock various engaging gameplay features and discover different rooms, each containing unique items. Grand Story delivers a highly immersive gaming experience by combining atmospheric world-building with meaningful narrative progression. The game encourages players to move forward not just for rewards, but for curiosity and emotional investment in the unfolding adventure.
 
 ### Game Details
