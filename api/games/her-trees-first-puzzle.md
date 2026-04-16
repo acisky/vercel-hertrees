@@ -8,7 +8,7 @@ timestamp: 1772615865
 
 ## Her Trees: First Puzzle
 
-Her Trees: First Puzzle is the debut game in the Her Trees series. This series features short point-and-click games focused on discovering hidden codes within a strange, dreamlike world. Her Trees: First Puzzle is playable directly in your browser at no cost, making it an excellent introduction to understand what the rest of the series could offer.
+Her Trees: First Puzzle is the debut game in the <a href="/">Her Trees</a> series. This series features short point-and-click games focused on discovering hidden codes within a strange, dreamlike world. Her Trees: First Puzzle is playable directly in your browser at no cost, making it an excellent introduction to understand what the rest of the series could offer.
 
 ### Gameplay Mechanics
 
