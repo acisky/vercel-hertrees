@@ -40,7 +40,7 @@ app.get("/", async (req, res) => {
   const topGames = topGamesArr
     .map((slug) => gameList.find((game) => game.slug === slug))
     .filter((game) => game !== undefined);
-  const newGames = gameList.filter((game) => !topGamesArr.includes(game.slug));
+  const newGames = gameList.filter((game) => !topGamesArr.includes(game.slug)).slice(0, 8);
   res.render("index", { topGames, newGames });
 });
 
@@ -67,7 +67,7 @@ games.forEach((filename) => {
       const topGames = topGamesArr
         .map((slug) => gameList.find((game) => game.slug === slug))
         .filter((game) => game !== undefined);
-      const newGames = gameList.filter((game) => !topGamesArr.includes(game.slug));
+      const newGames = gameList.filter((game) => !topGamesArr.includes(game.slug)).slice(0, 8);
 
       res.render("game", {
         metadata,
