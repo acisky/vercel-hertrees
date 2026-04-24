@@ -83,9 +83,51 @@
                                     </div>
                                 </div>
                             </div>
-                            <article class="game-post bg-content p-3 rounded mt-3">
-                                <%-content%>
-                            </article>
+                            <%if(metadata.slug=='her-trees-first-puzzle' ){%>
+                                <div class="post-screen mt-3">
+                                    <h2 class="fs-5 fw-bold mb-3">
+                                        <%=metadata.title%> Screenshots
+                                    </h2>
+                                    <div class="row g-3">
+                                        <div class="col-4">
+                                            <img src="/images/thumb05.webp" alt="<%=metadata.title%> Screenshot"
+                                                class="img-fluid rounded">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="/images/thumb06.webp" alt="<%=metadata.title%> Screenshot"
+                                                class="img-fluid rounded">
+                                        </div>
+                                        <div class="col-4">
+                                            <img src="/images/thumb07.webp" alt="<%=metadata.title%> Screenshot"
+                                                class="img-fluid rounded">
+                                        </div>
+                                    </div>
+                                </div>
+                                <%}%>
+                                    <%if(metadata.slug=='her-trees-the-puzzle-house' ){%>
+                                        <div class="post-screen mt-3">
+                                            <h2 class="fs-5 fw-bold mb-3">
+                                                <%=metadata.title%> Screenshots
+                                            </h2>
+                                            <div class="row g-3">
+                                                <div class="col-4">
+                                                    <img src="/images/thumb08.webp" alt="<%=metadata.title%> Screenshot"
+                                                        class="img-fluid rounded">
+                                                </div>
+                                                <div class="col-4">
+                                                    <img src="/images/thumb09.webp" alt="<%=metadata.title%> Screenshot"
+                                                        class="img-fluid rounded">
+                                                </div>
+                                                <div class="col-4">
+                                                    <img src="/images/thumb10.webp" alt="<%=metadata.title%> Screenshot"
+                                                        class="img-fluid rounded">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <%}%>
+                                            <article class="game-post bg-content p-3 rounded mt-3">
+                                                <%-content%>
+                                            </article>
                         </div>
                         <div class="col-12 col-md-3 mt-3 mt-md-0">
                             <div class="game-sidebar p-3 rounded mb-3">
@@ -129,7 +171,8 @@
                                         'params': {}
                                     };
                                 </script>
-                                <script src="https://www.highperformanceformat.com/27790b62cf9772743c1106196c4a31a9/invoke.js"></script>
+                                <script
+                                    src="https://www.highperformanceformat.com/27790b62cf9772743c1106196c4a31a9/invoke.js"></script>
                             </div>
 
                             <div class="game-sidebar p-3 rounded mb-3">
