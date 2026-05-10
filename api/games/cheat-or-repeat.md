@@ -4,6 +4,7 @@ slug: cheat-or-repeat
 iframe: https://games.ofree.io/cheat-or-repeat/game.html
 thumb: /thumb/cheat-or-repeat.webp
 timestamp: 1778151722
+category: puzzle
 ---
 
 Cheat or Repeat is a loose online puzzle game that tests your expectations and challenges how you think you learned. This game does not give you clear commands. Instead, it places you in simple conditions and lets you figure out what to do. Sometimes the answer is obvious. Other times, you must question everything and try something uncommon to succeed. This is what makes each play session unique.

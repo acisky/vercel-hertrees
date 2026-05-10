@@ -37,9 +37,7 @@ async function getGameList() {
 app.get("/", async (req, res) => {
   const gameList = await getGameList();
 
-  const topGames = topGamesArr
-    .map((slug) => gameList.find((game) => game.slug === slug))
-    .filter((game) => game !== undefined);
+  const topGames = topGamesArr.map((slug) => gameList.find((game) => game.slug === slug)).filter((game) => game !== undefined);
   const newGames = gameList.filter((game) => !topGamesArr.includes(game.slug)).slice(0, 8);
   res.render("index", { topGames, newGames });
 });
@@ -64,9 +62,7 @@ games.forEach((filename) => {
 
       const gameList = await getGameList();
 
-      const topGames = topGamesArr
-        .map((slug) => gameList.find((game) => game.slug === slug))
-        .filter((game) => game !== undefined);
+      const topGames = topGamesArr.map((slug) => gameList.find((game) => game.slug === slug)).filter((game) => game !== undefined);
       const newGames = gameList.filter((game) => !topGamesArr.includes(game.slug)).slice(0, 8);
 
       res.render("game", {
@@ -105,6 +101,12 @@ app.get("/new-games", async (req, res) => {
   res.render("newgames", { newGames: gameList });
 });
 
+app.get("/puzzle-games", async (req, res) => {
+  const gameList = await getGameList();
+  const puzzleGames = gameList.filter((game) => game.category && game.category == "puzzle");
+  res.render("puzzlegames", { puzzleGames });
+});
+
 app.get("/aboutus", (req, res) => {
   res.render("aboutus");
 });
@@ -125,9 +127,22 @@ app.get("/termsofservices", (req, res) => {
   res.render("termsofservices");
 });
 
+const staticRoutes = [
+  { path: "/", name: "home", priority: 1.0, changefreq: "weekly" },
+  { path: "/new-games", name: "new-games", priority: 0.9, changefreq: "daily" },
+  { path: "/puzzle-games", name: "puzzle-games", priority: 0.8, changefreq: "weekly" },
+  { path: "/aboutus", name: "aboutus", priority: 0.6, changefreq: "monthly" },
+  { path: "/contactus", name: "contactus", priority: 0.5, changefreq: "monthly" },
+  { path: "/privacypolicy", name: "privacypolicy", priority: 0.4, changefreq: "yearly" },
+  { path: "/termsofservices", name: "termsofservices", priority: 0.4, changefreq: "yearly" },
+  { path: "/dmca", name: "dmca", priority: 0.4, changefreq: "yearly" },
+];
+
 app.get("/game-sitemap.xml", async (req, res) => {
   try {
     const baseUrl = process.env.BASE_URL || `http://localhost:${port}`;
+    const today = new Date().toISOString().split("T")[0];
+
     const gameUrls = await Promise.all(
       games.map(async (filename) => {
         const filePath = path.join(gamesPath, filename);
@@ -136,15 +151,17 @@ app.get("/game-sitemap.xml", async (req, res) => {
           url: `${baseUrl}/${path.parse(filename).name}`,
           lastmod: stats.mtime.toISOString().split("T")[0],
           priority: 0.8,
+          changefreq: "weekly",
         };
       }),
     );
 
-    const staticUrls = [
-      { url: baseUrl, lastmod: new Date().toISOString().split("T")[0], priority: 1.0 },
-      { url: `${baseUrl}/new-games`, lastmod: new Date().toISOString().split("T")[0], priority: 0.9 },
-      { url: `${baseUrl}/sprunki-all-phases`, lastmod: new Date().toISOString().split("T")[0], priority: 0.9 },
-    ];
+    const staticUrls = staticRoutes.map((route) => ({
+      url: `${baseUrl}${route.path}`,
+      lastmod: today,
+      priority: route.priority,
+      changefreq: route.changefreq,
+    }));
 
     const allUrls = [...staticUrls, ...gameUrls];
 

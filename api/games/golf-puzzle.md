@@ -1,9 +1,10 @@
 ---
 title: Golf Puzzle
 slug: golf-puzzle
-iframe: https://gamea.azgame.io/golf-puzzle/
+iframe: https://golfpuzzle.org/game/index.html
 thumb: /thumb/golf-puzzle.webp
 timestamp: 1775747983
+category: puzzle
 ---
 
 Golf Puzzle is a strategic logic game where mental acuity replaces physical athleticism entirely. This is a game that challenges players to ascend mountain peaks by working through over 100 card-based riddles instead of swinging a club on a fairway. The core goal remains straightforward — sink the ball into the hole — but the experience is purely cerebral from start to finish. Players must rely on strategic thinking and pattern recognition to complete each stage. No knowledge of golf rules or real-world sports mechanics is required to solve the puzzles, making Golf Puzzle accessible to anyone who enjoys a solid brain teaser.
