@@ -127,6 +127,10 @@ app.get("/termsofservices", (req, res) => {
   res.render("termsofservices");
 });
 
+app.get("/ads", (req, res) => {
+  res.render("ads");
+});
+
 const staticRoutes = [
   { path: "/", name: "home", priority: 1.0, changefreq: "weekly" },
   { path: "/new-games", name: "new-games", priority: 0.9, changefreq: "daily" },
