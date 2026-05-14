@@ -41,3 +41,4 @@ Multiple Endings allow you to discover all possible outcomes based on your relat
 ## Similar Games
 
 - [Kingdom Of Marionettes](/kingdom-of-marionettes)
+- [Married In Red](/married-in-red)
