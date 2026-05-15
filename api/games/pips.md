@@ -4,6 +4,7 @@ slug: helltaker
 iframe: https://pips-game.com/
 thumb: /thumb/pips.webp
 timestamp: 1775747983
+category: puzzle
 ---
 
 Pips NYT is a brand-new domino-style puzzle that has quickly captured the attention of puzzle enthusiasts everywhere. This is the perfect place to learn everything about Pips NYT, understand how it works, and start playing unlimited rounds whenever you want. Pips NYT combines logic with strategy, and the tips shared here could make you feel like a seasoned pro in no time.
