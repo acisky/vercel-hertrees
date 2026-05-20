@@ -42,7 +42,7 @@
                                         title="<%= game.title %>">
                                         <div class="game-card-image rounded">
                                             <div class="ratio ratio-1x1">
-                                                <img src="<%= game.thumb %>" class="object-fit-cover rounded"
+                                                <img src="<%= game.thumb.replace('/thumb', '/thumb_small') %>" class="object-fit-cover rounded"
                                                     alt="<%=game.title%>" />
                                             </div>
                                         </div>

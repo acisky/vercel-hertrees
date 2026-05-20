@@ -22,3 +22,7 @@ Cubinko features three distinct game modes designed to test your skills in diffe
 ## Unique Controls
 
 Cubinko uses simple and intuitive controls. Rotate angle by clicking on the original block. Place blocks on the table by holding down and dragging the mouse.
+
+## Similar Games
+
+- [PIPS](/pips)
