@@ -20,7 +20,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(cookieParser());
 
-const topGamesArr = ["her-trees-first-puzzle", "her-trees-the-puzzle-house", "pips", "trees-hate-you"];
+const topGamesArr = ["her-trees-first-puzzle", "her-trees-the-puzzle-house", "cubinko", "trees-hate-you"];
 
 async function getGameList() {
   const list = await Promise.all(
