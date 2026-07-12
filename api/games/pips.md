@@ -1,6 +1,6 @@
 ---
 title: Pips
-slug: helltaker
+slug: Pips
 iframe: https://pips-game.com/
 thumb: /thumb/pips.webp
 timestamp: 1775747983
