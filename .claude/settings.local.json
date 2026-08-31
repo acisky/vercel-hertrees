@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s --max-time 15 \"https://her-trees.com/robots.txt\")",
+      "Bash(curl -s --max-time 20 \"https://her-trees.com/game-sitemap.xml\")"
+    ]
+  }
+}
